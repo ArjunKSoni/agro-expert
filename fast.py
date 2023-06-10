@@ -58,6 +58,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.get("/")
+async def first():
+    return("successfully loaded")
+
 @app.post("/nav")
 async def create_item(item: Item1):
     crop=item.search
